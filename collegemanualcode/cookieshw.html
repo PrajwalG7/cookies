@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    console.log("working");
+    function readCookies() {
+      // assigning cookie string to the variable
+      let studentName = "prajwal";
+      let studentValue = "good boy";
+
+      document.cookie = "name =" + studentName;
+      document.cookie = "value = " + studentValue;
+
+      console.log(document.cookie);
+
+      var cookies = document.cookie;
+
+      document.write("All stored Cookies: " + cookies);
+      //Spliting the cookie pairs in an array
+      var cookiearray = cookies.split(";");
+      console.log(cookiearray);
+      //Getting name =value pair from the array
+      for (let i = 0; i < cookiearray.length; i++) {
+        //Getting rach name=value pair in a variable
+        const cookie_pair = cookiearray[i];
+        //Getting name and value in an array from name value pair
+        var name_value_array = cookie_pair.split("=");
+        console.log(name_value_array);
+        //Getting name from array
+        var name = name_value_array[0];
+        //Getting value from array
+        var value = name_value_array[1];
+        document.write("<br>Name is:" + name + " and Value is: " + value);
+      }
+    }
+
+    //calling the function.
+    readCookies();
+  </script>
+</html>
